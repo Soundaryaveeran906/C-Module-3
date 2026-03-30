@@ -1,42 +1,54 @@
-# Arrays: Replace Odd Elements with 'O' in an Array
-
-This repository contains a **C program** that reads a one-dimensional array of integers and **replaces all odd elements with the character `'O'`** when displaying the output.
+# # Fibonacci Series Generator
 
 ## 🧠 Aim
 
-To write a C program that replaces all odd elements of an array with `'O'`.
+To write a program to generate the Fibonacci series for `n` numbers using a function that:
+- Has no return type.
+- Takes no arguments.
 
 ## 📋 Algorithm
 
-1. Declare integer variables: `i`, `n` and an array `a[100]`.
-2. Read the value of `n` (number of elements in the array) from the user.
-3. Read `n` integers into the array `a`.
-4. Loop through each element of the array:
-   - If the element is odd (`a[i] % 2 != 0`), print `'O'`.
-   - Otherwise, print the element itself.
-5. Print each result separated by a space.
+1. Define a function `fib()` that calculates the Fibonacci series.
+2. Inside `fib()`:
+   - Read input value `n` from the user.
+   - Initialize two variables: `a = 0`, `b = 1`.
+   - Print the first two Fibonacci numbers: `a` and `b`.
+   - Use a loop to generate and print the next `n-2` Fibonacci numbers.
+3. In the `main()` function:
+   - Call the `fib()` function.
+   - Return 0 to indicate successful program termination.
 
 ## 🧾Program
 ```
 #include <stdio.h>
-
-int main() {
-    int i, n;
-    int a[100];
-    printf("Enter the number of elements: ");
+void fib() {
+    int n, i;
+    int a = 0, b = 1, c;
+    printf("Enter the number of terms: ");
     scanf("%d", &n);
-    printf("Enter %d elements:\n", n);
-    for(i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
+    if(n >= 1) {
+        printf("%d ", a);
     }
-    printf("Result:\n");
-    for(i = 0; i < n; i++) {
-        if(a[i] % 2 != 0) {
-            printf("O ");
-        } else {
-            printf("%d ", a[i]);
-        }
+    if(n >= 2) {
+        printf("%d ", b);
     }
 
+    for(i = 3; i <= n; i++) {
+        c = a + b;
+        printf("%d ", c);
+        a = b;
+        b = c;
+    }
+}
+```
+int main() {
+    fib();
     return 0;
 }
+
+## Sample Output
+<img width="437" height="251" alt="image" src="https://github.com/user-attachments/assets/3ac54d45-5c53-4958-bc3d-d3a888ac2476" />
+
+## Result
+program to generate the Fibonacci series for `n` numbers using a function that:Has no return type, Takes no arguments is written.t
+
